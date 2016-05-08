@@ -3,12 +3,14 @@ package pl.kurs.warehouse.service.mapper;
 import pl.kurs.warehouse.model.dbo.Product;
 import pl.kurs.warehouse.model.dto.DtoProduct;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Sebastian on 2016-05-02.
  */
+@Stateless
 public class ProductMapper implements MapperInterface<Product, DtoProduct> {
     @Override
     public Product convertToDBO(DtoProduct dtoProduct) {
@@ -38,7 +40,7 @@ public class ProductMapper implements MapperInterface<Product, DtoProduct> {
     }
 
     @Override
-    public Iterable<Product> convertToDBO(Iterable<DtoProduct> dto) {
+    public List<Product> convertToDBO(Iterable<DtoProduct> dto) {
         List<Product> products = new ArrayList<Product>();
         for(DtoProduct product : dto) {
             products.add(convertToDBO(product));
@@ -48,7 +50,7 @@ public class ProductMapper implements MapperInterface<Product, DtoProduct> {
     }
 
     @Override
-    public Iterable<DtoProduct> convertToDTO(Iterable<Product> dbo) {
+    public List<DtoProduct> convertToDTO(Iterable<Product> dbo) {
         List<DtoProduct> products = new ArrayList<DtoProduct>();
         for(Product product : dbo) {
             products.add(convertToDTO(product));

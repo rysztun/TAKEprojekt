@@ -4,13 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Sebastian on 2016-05-02.
  */
 @Entity
-public class Warehouse {
+@XmlRootElement
+public class Warehouse implements Serializable {
 
     @Id
     @GeneratedValue

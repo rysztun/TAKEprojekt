@@ -1,6 +1,8 @@
 package pl.kurs.warehouse.model.dbo;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +10,8 @@ import java.util.List;
  * Created by Sebastian on 2016-05-02.
  */
 @Entity
-public class Invoice {
+@XmlRootElement
+public class Invoice implements Serializable {
 
     @Id
     @GeneratedValue

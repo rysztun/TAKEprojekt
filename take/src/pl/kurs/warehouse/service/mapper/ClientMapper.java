@@ -3,12 +3,14 @@ package pl.kurs.warehouse.service.mapper;
 import pl.kurs.warehouse.model.dbo.Client;
 import pl.kurs.warehouse.model.dto.DtoClient;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Sebastian on 2016-05-02.
  */
+@Stateless
 public class ClientMapper implements MapperInterface<Client, DtoClient> {
 
     @Override
@@ -34,7 +36,7 @@ public class ClientMapper implements MapperInterface<Client, DtoClient> {
     }
 
     @Override
-    public Iterable<Client> convertToDBO(Iterable<DtoClient> dto) {
+    public List<Client> convertToDBO(Iterable<DtoClient> dto) {
         List<Client> clients = new ArrayList<Client>();
         for(DtoClient dtoClient : dto) {
             clients.add(convertToDBO(dtoClient));
@@ -43,7 +45,7 @@ public class ClientMapper implements MapperInterface<Client, DtoClient> {
     }
 
     @Override
-    public Iterable<DtoClient> convertToDTO(Iterable<Client> dbo) {
+    public List<DtoClient> convertToDTO(Iterable<Client> dbo) {
         List<DtoClient> clients = new ArrayList<DtoClient>();
         for(Client client : dbo){
             clients.add(convertToDTO(client));

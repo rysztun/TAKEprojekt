@@ -1,17 +1,20 @@
 package pl.kurs.warehouse.repo;
 
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.lang.reflect.ParameterizedType;
 
 /**
  * Created by Sebastian on 2016-05-03.
  */
-abstract public class AbstractRepo <DBO, IdType> {
 
-    @PersistenceContext(name = "warehouse")
-    EntityManager entityManager;
+abstract public class AbstractRepo <DBO, IdType> extends pl.kurs.warehouse.repo.EntityManager {
+
+//    @PersistenceContext(name = "wholesale")
+//    EntityManager entityManager;
+
 
     Class<DBO> dboObjectClass = (Class<DBO>)
             ((ParameterizedType)getClass().getGenericSuperclass())

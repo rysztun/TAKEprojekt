@@ -1,12 +1,15 @@
 package pl.kurs.warehouse.model.dbo;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  * Created by Sebastian on 2016-05-02.
  */
 @Entity
-public class Product {
+@XmlRootElement
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue

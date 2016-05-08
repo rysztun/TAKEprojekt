@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Take Project</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" th:src="@{/js/ClientControllers.js}"></script>
+    <script type="text/javascript" th:src="@{/js/InvoiceControllers.js}"></script>
+    <script type="text/javascript" th:src="@{/js/ProductControllers.js}"></script>
+    <script type="text/javascript" th:src="@{/js/WarehouseControllers.js}"></script>
+    <script type="text/javascript" th:src="@{/js/RouteProvider.js}"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">TakeProject</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#client/1">Client</a></li>
+            <li><a href="#product/1">Product</a></li>
+            <li><a href="#invoice/1">Invoice</a></li>
+            <li><a href="#warehouse/1">Warehouse</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div ng-app="mainApp">
+
+
+    <div ng-view="true"></div>
+</div>
+</body>
+</html>

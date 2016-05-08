@@ -22,6 +22,7 @@ public class KomisREST implements Komis {
 
 	@EJB
 	KomisEJB bean;
+	
 
 	@Override
 	@POST

@@ -8,6 +8,7 @@ import javax.ejb.EJB;
 /**
  * Created by Sebastian on 2016-05-02.
  */
+
 abstract public class AbstractService<DBO, DTO, R extends AbstractRepo<DBO,Long>, M extends MapperInterface<DBO, DTO>> {
 
     @EJB

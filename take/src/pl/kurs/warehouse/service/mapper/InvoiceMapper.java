@@ -3,12 +3,14 @@ package pl.kurs.warehouse.service.mapper;
 import pl.kurs.warehouse.model.dbo.Invoice;
 import pl.kurs.warehouse.model.dto.DtoInvoice;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Sebastian on 2016-05-02.
  */
+@Stateless
 public class InvoiceMapper implements MapperInterface<Invoice, DtoInvoice> {
     @Override
     public Invoice convertToDBO(DtoInvoice dtoInvoice) {
@@ -35,7 +37,7 @@ public class InvoiceMapper implements MapperInterface<Invoice, DtoInvoice> {
     }
 
     @Override
-    public Iterable<Invoice> convertToDBO(Iterable<DtoInvoice> dto) {
+    public List<Invoice> convertToDBO(Iterable<DtoInvoice> dto) {
         List<Invoice> invoices = new ArrayList<Invoice>();
         for(DtoInvoice invoice : dto) {
             invoices.add(convertToDBO(invoice));
@@ -44,7 +46,7 @@ public class InvoiceMapper implements MapperInterface<Invoice, DtoInvoice> {
     }
 
     @Override
-    public Iterable<DtoInvoice> convertToDTO(Iterable<Invoice> dbo) {
+    public List<DtoInvoice> convertToDTO(Iterable<Invoice> dbo) {
         List<DtoInvoice> invoices = new ArrayList<DtoInvoice>();
         for(Invoice invoice : dbo ) {
             invoices.add(convertToDTO(invoice));

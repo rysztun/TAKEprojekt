@@ -1,8 +1,11 @@
 package pl.kurs.warehouse.model.dto;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Created by Sebastian on 2016-05-02.
  */
+@XmlRootElement
 public class DtoClient {
 
     private Long id;
